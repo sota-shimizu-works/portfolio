@@ -1,0 +1,46 @@
+html {
+    font-size: 10px !important;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    background-color: $color5;
+    color: $color2;
+    @extend .robot;
+}
+
+.page-width {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: auto;
+}
+
+#profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 90vh;
+
+    h1 {
+        font-size: 4.2rem;
+        @extend .palette;
+    }
+    p {
+        margin-bottom: 1em;
+        &.birthday {
+            margin-bottom: 3em;
+        }
+        &.name {
+            font-size: 2.4rem;
+            margin-bottom: 2em;
+            font-weight: 600;
+            letter-spacing: 0.17em;
+            .name-en {
+                font-size: 1.4rem;
+                font-weight: 400;
+            }
+        }
+    }
+}

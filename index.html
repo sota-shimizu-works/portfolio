@@ -5,12 +5,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>shimizu-portfolio</title>
+    <script src="js/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="css/common.min.css">
 </head>
 
 <body>
-    test
+
+    <div id="profile" class="page-width">
+        <h1>Portfolio</h1>
+        <div>
+            <p class="birthday">1996.10.15(<span id="myAge"></span>)</p>
+            <p class="name">清水 創太<span class="name-en"> - Sota Shimizu</span></p>
+            <p class="email">shimizu.s.works@gmail.com</p>
+            <p id="create-pdf">Create portfolio for pdf.</p>
+            <p class="links"><i class="fa-brands fa-github"></i></p>
+        </div>
+    </div>
+
+    <script>
+        const birthday = {
+            year: 1996,
+            month: 10,
+            date: 15
+        };
+        var today = new Date();
+        var thisYearsBirthday = new Date(today.getFullYear(), birthday.month - 1, birthday.date);
+        var age = today.getFullYear() - birthday.year;
+        if (today < thisYearsBirthday) {
+            age--;
+        }
+        document.getElementById('myAge').innerHTML = age;
+
+        document.getElementById("create-pdf").addEventListener("click", function () {
+            const element = document.body; // 対象要素を指定
+            const option = {
+                margin: 1, // 余白
+                filename: 'portfolio.pdf', // ファイル名
+                image: { type: 'png', quality: 1 }, // PDFの生成に使用される画像のタイプとクオリティ
+                html2canvas: { scale: 2, useCORS: true }, // html2canvasで使用される設定を記述。useCORS: trueを設定すると別ドメインの画像を表示できる（サイトによってはできないこともある）
+                jsPDF: { format: 'a2', orientation: 'portrait' }, // jsPDFで使用される設定を記述
+            };
+
+            html2pdf()
+                .from(element)
+                .set(option)
+                .save()
+                .then(() => {
+                    // 成功
+                })
+                .catch((e) => {
+                    // 失敗
+                });
+        })      
+    </script>
 </body>
 
 </html>
