@@ -8,23 +8,147 @@
     <title>shimizu-portfolio</title>
     <script src="js/html2pdf.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="css/common.min.css">
+    <!-- <link rel="stylesheet" href="css/common.min.css"> -->
+    <link rel="stylesheet" href="css/common.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
     <div id="profile" class="page-width">
+        <!-- <div id="accent"></div> -->
         <h1>Portfolio</h1>
         <div>
             <p class="birthday">1996.10.15(<span id="myAge"></span>)</p>
             <p class="name">清水 創太<span class="name-en"> - Sota Shimizu</span></p>
-            <p class="email">shimizu.s.works@gmail.com</p>
+            <p class="email"><a href="mailto:shimizu.s.works@gmail.com" target="_blank">shimizu.s.works@gmail.com</a>
+            </p>
             <p id="create-pdf">Create portfolio for pdf.</p>
-            <p class="links"><i class="fa-brands fa-github"></i></p>
+            <p class="links">
+                <a href="https://github.com/sota-shimizu-works" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </p>
         </div>
     </div>
 
+    <div id="radar-chart" class="page-width">
+        <div class="canvas">
+            <canvas id="mychart-radar"></canvas>
+        </div>
+        <div class="lang-desc">
+            <div class="lang-select">
+                <div class="selector">
+                    <p data-id="1" class="active">CSS</p>
+                    <p data-id="2">Javascript</p>
+                    <p data-id="3">PHP</p>
+                    <p data-id="4">Liquid</p>
+                </div>
+                <div class="toggle-icon">
+                    <i class="fa-solid fa-angle-down"></i>
+                    <i class="fa-solid fa-angle-up"></i>
+                </div>
+            </div>
+
+            <div class="desc">
+                <div class="active wrap set1">
+                    <ul>
+                        <li>SCSS</li>
+                        <li>Bootstrap</li>
+                        <li>Tailwind css</li>
+                    </ul>
+                </div>
+
+                <div class="wrap set2">
+                    <ul>
+                        <li>Jquery</li>
+                        <li>Nodejs</li>
+                        <li>Vue</li>
+                    </ul>
+                </div>
+
+                <div class="wrap set3">
+                    <ul>
+                        <li>CakePHP</li>
+                        <li>WordPress</li>
+                        <li>Laravel</li>
+                        <li>codeigniter</li>
+                        <li>FastRoute</li>
+                        <li>Smarty</li>
+                    </ul>
+                </div>
+
+                <div class="wrap set4">
+                    <ul>
+                        <li>Shopify Liquid</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="works" class="page-width">
+
+        <h2 class="palette">Works</h2>
+
+        <div class="work">
+            <a href="image/tailwindtheme.png" target="_blank" class="image">
+                <img src="image/tailwindtheme.png" alt="">
+            </a>
+            <div class="desc">
+                <h3>Tailwind Shopify theme</h3>
+                <ul>
+                    <li>Liquid</li>
+                    <li>Tailwind</li>
+                    <li>Alpine</li>
+                    <li>NodeJS</li>
+                </ul>
+                <p>
+                    Shopify theme2.0用テーマ『down』にTailwindを入れたテーマです。npmスクリプトを入れて即時ビルドできるようにしてあります。<br>
+                    <a href="https://qiita.com/sota_shimizu/items/03849e95cd7a8120c355" target="_blank">Qiita</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="work reverse">
+            <a href="image/kitade.png" target="_blank" class="image">
+                <img src="image/kitade.png" alt="">
+            </a>
+            <div class="desc">
+                <h3>Yoshiaki Kitade</h3>
+                <ul>
+                    <li>WordPress</li>
+                </ul>
+                <p>
+                    カメラマンのポートフォリオサイトです。グリッジエフェクトはCSSで実装しています。<br>
+                    <a href="https://seedyoshiaki.net/" target="_blank">Site</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
     <script>
+        // lang desc --------------------------------------------------------------------------------
+        $(function () {
+            $('.lang-select').on('click', function () {
+                $(this).toggleClass('active');
+            });
+
+            $('.lang-select p').on('click', function () {
+                $('.lang-select p').removeClass('active');
+                $(this).addClass('active');
+
+                let select_id = $(this).data('id');
+                console.log(select_id);
+                $('.desc .wrap').removeClass('active');
+                $('.desc .set' + select_id).addClass('active');
+            });
+        });
+
+        // birth day --------------------------------------------------------------------------------
         const birthday = {
             year: 1996,
             month: 10,
@@ -38,10 +162,11 @@
         }
         document.getElementById('myAge').innerHTML = age;
 
+        // create pdf  --------------------------------------------------------------------------------
         document.getElementById("create-pdf").addEventListener("click", function () {
             const element = document.body; // 対象要素を指定
             const option = {
-                margin: 1, // 余白
+                // margin: 1, // 余白
                 filename: 'portfolio.pdf', // ファイル名
                 image: { type: 'png', quality: 1 }, // PDFの生成に使用される画像のタイプとクオリティ
                 html2canvas: { scale: 2, useCORS: true }, // html2canvasで使用される設定を記述。useCORS: trueを設定すると別ドメインの画像を表示できる（サイトによってはできないこともある）
@@ -58,7 +183,80 @@
                 .catch((e) => {
                     // 失敗
                 });
-        })      
+        })
+
+
+        // chart  --------------------------------------------------------------------------------
+        $(function () {
+            var container = $('.canvas');
+            var ctx = $('#mychart-radar');
+            var myChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['案件数', '経験年数', '自己評価', '理解度'],
+                    datasets: [
+                        {
+                            label: 'CSS',
+                            data: [10, 10, 8, 8],
+                            // データライン
+                            borderColor: '#2aa9e0',
+                            backgroundColor: 'rgba(42,169,224,0.05)',
+                            borderWidth: 4,
+                        },
+                        {
+                            label: 'Javascript',
+                            data: [8, 8, 4, 3],
+                            // データライン
+                            borderColor: '#ead41c',
+                            backgroundColor: 'rgba(234,212,28,0.05)',
+                            borderWidth: 4,
+                        },
+                        {
+                            label: 'PHP',
+                            data: [8, 10, 9, 7],
+                            // データライン
+                            borderColor: '#808bb6',
+                            backgroundColor: 'rgba(128,139,182,0.05)',
+                            borderWidth: 4,
+                        },
+                        {
+                            label: 'Liquid',
+                            data: [4, 6, 6, 6],
+                            // データライン
+                            borderColor: '#9ac863',
+                            backgroundColor: 'rgba(154,200,99,0.05)',
+                            borderWidth: 4,
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        r: {
+                            // 最小値・最大値
+                            min: 0,
+                            max: 10,
+                            backgroundColor: '#fff',
+                            grid: {
+                                color: '#162447',
+                            },
+                            // アングルライン
+                            angleLines: {
+                                color: '#e43f5a',
+                            },
+                            // ポイントラベル
+                            pointLabels: {
+                                color: '#162447',
+                                backdropPadding: 5,
+                                padding: 20,
+                            },
+                        },
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false
+                },
+            });
+        });
+
     </script>
 </body>
 
