@@ -1,5 +1,8 @@
 html {
     font-size: 10px !important;
+    @include xs {
+        font-size: 9px !important;
+    }
 }
 
 body {
@@ -39,6 +42,12 @@ ul.works {
         border-bottom: solid 1px rgba($color1, 0.1);
         padding-right: 2.5rem;
         padding-bottom: 4rem;
+        @include lg {
+            flex: 0 0 46%;
+        }
+        @include md {
+            flex: 0 0 100%;
+        }
         .icon {
             padding-right: 3.5rem;
             i {
