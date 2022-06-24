@@ -82,14 +82,14 @@
 
 .fa-xs {
   font-size: 0.75em;
-  line-height: 0.08333em;
+  line-height: 0.0833333337em;
   vertical-align: 0.125em;
 }
 
 .fa-sm {
   font-size: 0.875em;
-  line-height: 0.07143em;
-  vertical-align: 0.05357em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
 }
 
 .fa-lg {
@@ -100,7 +100,7 @@
 
 .fa-xl {
   font-size: 1.5em;
-  line-height: 0.04167em;
+  line-height: 0.0416666682em;
   vertical-align: -0.125em;
 }
 
@@ -120,7 +120,6 @@
   margin-left: var(--fa-li-margin, 2.5em);
   padding-left: 0;
 }
-
 .fa-ul > li {
   position: relative;
 }
@@ -276,297 +275,227 @@
 
 @media (prefers-reduced-motion: reduce) {
   .fa-beat,
-  .fa-bounce,
-  .fa-fade,
-  .fa-beat-fade,
-  .fa-flip,
-  .fa-pulse,
-  .fa-shake,
-  .fa-spin,
-  .fa-spin-pulse {
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
     -webkit-animation-delay: -1ms;
             animation-delay: -1ms;
     -webkit-animation-duration: 1ms;
             animation-duration: 1ms;
     -webkit-animation-iteration-count: 1;
             animation-iteration-count: 1;
-    -webkit-transition-delay: 0s;
-            transition-delay: 0s;
-    -webkit-transition-duration: 0s;
-            transition-duration: 0s;
+    transition-delay: 0s;
+    transition-duration: 0s;
   }
 }
-
 @-webkit-keyframes fa-beat {
   0%, 90% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   45% {
-    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
-            transform: scale(var(--fa-beat-scale, 1.25));
+    transform: scale(var(--fa-beat-scale, 1.25));
   }
 }
-
 @keyframes fa-beat {
   0%, 90% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   45% {
-    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
-            transform: scale(var(--fa-beat-scale, 1.25));
+    transform: scale(var(--fa-beat-scale, 1.25));
   }
 }
-
 @-webkit-keyframes fa-bounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   10% {
-    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
   }
   30% {
-    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
   }
   50% {
-    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
   }
   57% {
-    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
   }
   64% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   100% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
 }
-
 @keyframes fa-bounce {
   0% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   10% {
-    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
-            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
   }
   30% {
-    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
-            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
   }
   50% {
-    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
-            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
   }
   57% {
-    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
-            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
   }
   64% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   100% {
-    -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
 }
-
 @-webkit-keyframes fa-fade {
   50% {
     opacity: var(--fa-fade-opacity, 0.4);
   }
 }
-
 @keyframes fa-fade {
   50% {
     opacity: var(--fa-fade-opacity, 0.4);
   }
 }
-
 @-webkit-keyframes fa-beat-fade {
   0%, 100% {
     opacity: var(--fa-beat-fade-opacity, 0.4);
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
     opacity: 1;
-    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
-            transform: scale(var(--fa-beat-fade-scale, 1.125));
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
   }
 }
-
 @keyframes fa-beat-fade {
   0%, 100% {
     opacity: var(--fa-beat-fade-opacity, 0.4);
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
     opacity: 1;
-    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
-            transform: scale(var(--fa-beat-fade-scale, 1.125));
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
   }
 }
-
 @-webkit-keyframes fa-flip {
   50% {
-    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
-            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
   }
 }
-
 @keyframes fa-flip {
   50% {
-    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
-            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
   }
 }
-
 @-webkit-keyframes fa-shake {
   0% {
-    -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
+    transform: rotate(-15deg);
   }
   4% {
-    -webkit-transform: rotate(15deg);
-            transform: rotate(15deg);
+    transform: rotate(15deg);
   }
   8%, 24% {
-    -webkit-transform: rotate(-18deg);
-            transform: rotate(-18deg);
+    transform: rotate(-18deg);
   }
   12%, 28% {
-    -webkit-transform: rotate(18deg);
-            transform: rotate(18deg);
+    transform: rotate(18deg);
   }
   16% {
-    -webkit-transform: rotate(-22deg);
-            transform: rotate(-22deg);
+    transform: rotate(-22deg);
   }
   20% {
-    -webkit-transform: rotate(22deg);
-            transform: rotate(22deg);
+    transform: rotate(22deg);
   }
   32% {
-    -webkit-transform: rotate(-12deg);
-            transform: rotate(-12deg);
+    transform: rotate(-12deg);
   }
   36% {
-    -webkit-transform: rotate(12deg);
-            transform: rotate(12deg);
+    transform: rotate(12deg);
   }
   40%, 100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
-
 @keyframes fa-shake {
   0% {
-    -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
+    transform: rotate(-15deg);
   }
   4% {
-    -webkit-transform: rotate(15deg);
-            transform: rotate(15deg);
+    transform: rotate(15deg);
   }
   8%, 24% {
-    -webkit-transform: rotate(-18deg);
-            transform: rotate(-18deg);
+    transform: rotate(-18deg);
   }
   12%, 28% {
-    -webkit-transform: rotate(18deg);
-            transform: rotate(18deg);
+    transform: rotate(18deg);
   }
   16% {
-    -webkit-transform: rotate(-22deg);
-            transform: rotate(-22deg);
+    transform: rotate(-22deg);
   }
   20% {
-    -webkit-transform: rotate(22deg);
-            transform: rotate(22deg);
+    transform: rotate(22deg);
   }
   32% {
-    -webkit-transform: rotate(-12deg);
-            transform: rotate(-12deg);
+    transform: rotate(-12deg);
   }
   36% {
-    -webkit-transform: rotate(12deg);
-            transform: rotate(12deg);
+    transform: rotate(12deg);
   }
   40%, 100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
-
 @-webkit-keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
-
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
-
 .fa-rotate-90 {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
-  -webkit-transform: scale(-1, 1);
-          transform: scale(-1, 1);
+  transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
-  -webkit-transform: scale(1, -1);
-          transform: scale(1, -1);
+  transform: scale(1, -1);
 }
 
 .fa-flip-both,
 .fa-flip-horizontal.fa-flip-vertical {
-  -webkit-transform: scale(-1, -1);
-          transform: scale(-1, -1);
+  transform: scale(-1, -1);
 }
 
 .fa-rotate-by {
-  -webkit-transform: rotate(var(--fa-rotate-angle, none));
-          transform: rotate(var(--fa-rotate-angle, none));
+  transform: rotate(var(--fa-rotate-angle, none));
 }
 
 .fa-stack {
@@ -602,47 +531,47 @@
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
 readers do not read off random characters that represent icons */
 .fa-0::before {
-  content: "\30";
+  content: "\30 ";
 }
 
 .fa-1::before {
-  content: "\31";
+  content: "\31 ";
 }
 
 .fa-2::before {
-  content: "\32";
+  content: "\32 ";
 }
 
 .fa-3::before {
-  content: "\33";
+  content: "\33 ";
 }
 
 .fa-4::before {
-  content: "\34";
+  content: "\34 ";
 }
 
 .fa-5::before {
-  content: "\35";
+  content: "\35 ";
 }
 
 .fa-6::before {
-  content: "\36";
+  content: "\36 ";
 }
 
 .fa-7::before {
-  content: "\37";
+  content: "\37 ";
 }
 
 .fa-8::before {
-  content: "\38";
+  content: "\38 ";
 }
 
 .fa-9::before {
-  content: "\39";
+  content: "\39 ";
 }
 
 .fa-a::before {
-  content: "\41";
+  content: "A";
 }
 
 .fa-address-book::before {
@@ -1142,11 +1071,11 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-asterisk::before {
-  content: "\2a";
+  content: "\*";
 }
 
 .fa-at::before {
-  content: "\40";
+  content: "\@";
 }
 
 .fa-atom::before {
@@ -1166,7 +1095,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-b::before {
-  content: "\42";
+  content: "B";
 }
 
 .fa-baby::before {
@@ -1798,7 +1727,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-c::before {
-  content: "\43";
+  content: "C";
 }
 
 .fa-cake-candles::before {
@@ -2730,7 +2659,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-d::before {
-  content: "\44";
+  content: "D";
 }
 
 .fa-database::before {
@@ -2850,15 +2779,15 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-dollar-sign::before {
-  content: "\24";
+  content: "\$";
 }
 
 .fa-dollar::before {
-  content: "\24";
+  content: "\$";
 }
 
 .fa-usd::before {
-  content: "\24";
+  content: "\$";
 }
 
 .fa-dolly::before {
@@ -2958,7 +2887,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-e::before {
-  content: "\45";
+  content: "E";
 }
 
 .fa-ear-deaf::before {
@@ -3086,7 +3015,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-equals::before {
-  content: "\3d";
+  content: "\=";
 }
 
 .fa-eraser::before {
@@ -3110,7 +3039,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-exclamation::before {
-  content: "\21";
+  content: "\!";
 }
 
 .fa-expand::before {
@@ -3150,7 +3079,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-f::before {
-  content: "\46";
+  content: "F";
 }
 
 .fa-face-angry::before {
@@ -3814,7 +3743,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-g::before {
-  content: "\47";
+  content: "G";
 }
 
 .fa-gamepad::before {
@@ -3958,7 +3887,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-greater-than::before {
-  content: "\3e";
+  content: "\>";
 }
 
 .fa-greater-than-equal::before {
@@ -4002,7 +3931,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-h::before {
-  content: "\48";
+  content: "H";
 }
 
 .fa-hammer::before {
@@ -4234,7 +4163,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-hashtag::before {
-  content: "\23";
+  content: "\#";
 }
 
 .fa-hat-cowboy::before {
@@ -4594,7 +4523,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-i::before {
-  content: "\49";
+  content: "I";
 }
 
 .fa-i-cursor::before {
@@ -4694,7 +4623,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-j::before {
-  content: "\4a";
+  content: "J";
 }
 
 .fa-jar::before {
@@ -4730,7 +4659,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-k::before {
-  content: "\4b";
+  content: "K";
 }
 
 .fa-kaaba::before {
@@ -4770,7 +4699,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-l::before {
-  content: "\4c";
+  content: "L";
 }
 
 .fa-land-mine-on::before {
@@ -4846,7 +4775,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-less-than::before {
-  content: "\3c";
+  content: "\<";
 }
 
 .fa-less-than-equal::before {
@@ -4986,7 +4915,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-m::before {
-  content: "\4d";
+  content: "M";
 }
 
 .fa-magnet::before {
@@ -5398,7 +5327,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-n::before {
-  content: "\4e";
+  content: "N";
 }
 
 .fa-naira-sign::before {
@@ -5434,7 +5363,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-o::before {
-  content: "\4f";
+  content: "O";
 }
 
 .fa-object-group::before {
@@ -5470,7 +5399,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-p::before {
-  content: "\50";
+  content: "P";
 }
 
 .fa-pager::before {
@@ -5626,11 +5555,11 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-percent::before {
-  content: "\25";
+  content: "\%";
 }
 
 .fa-percentage::before {
-  content: "\25";
+  content: "\%";
 }
 
 .fa-person::before {
@@ -6010,11 +5939,11 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-plus::before {
-  content: "\2b";
+  content: "\+";
 }
 
 .fa-add::before {
-  content: "\2b";
+  content: "\+";
 }
 
 .fa-plus-minus::before {
@@ -6078,7 +6007,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-q::before {
-  content: "\51";
+  content: "Q";
 }
 
 .fa-qrcode::before {
@@ -6086,7 +6015,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-question::before {
-  content: "\3f";
+  content: "\?";
 }
 
 .fa-quote-left::before {
@@ -6106,7 +6035,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-r::before {
-  content: "\52";
+  content: "R";
 }
 
 .fa-radiation::before {
@@ -6382,7 +6311,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-s::before {
-  content: "\53";
+  content: "S";
 }
 
 .fa-sack-dollar::before {
@@ -7174,7 +7103,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-t::before {
-  content: "\54";
+  content: "T";
 }
 
 .fa-table::before {
@@ -7762,7 +7691,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-u::before {
-  content: "\55";
+  content: "U";
 }
 
 .fa-umbrella::before {
@@ -8002,7 +7931,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-v::before {
-  content: "\56";
+  content: "V";
 }
 
 .fa-van-shuttle::before {
@@ -8146,7 +8075,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-w::before {
-  content: "\57";
+  content: "W";
 }
 
 .fa-walkie-talkie::before {
@@ -8310,7 +8239,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-x::before {
-  content: "\58";
+  content: "X";
 }
 
 .fa-x-ray::before {
@@ -8342,7 +8271,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-y::before {
-  content: "\59";
+  content: "Y";
 }
 
 .fa-yen-sign::before {
@@ -8370,7 +8299,7 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-z::before {
-  content: "\5a";
+  content: "Z";
 }
 
 .sr-only,
@@ -8409,16 +8338,15 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: 'Font Awesome 6 Free';
+  font-family: "Font Awesome 6 Free";
   font-style: normal;
   font-weight: 900;
   font-display: block;
   src: url("./fontawesome-free-6.1.1-web/webfonts/fa-solid-900.woff2") format("woff2"), url("./fontawesome-free-6.1.1-web/webfonts/fa-solid-900.ttf") format("truetype");
 }
-
 .fas,
 .fa-solid {
-  font-family: 'Font Awesome 6 Free';
+  font-family: "Font Awesome 6 Free";
   font-weight: 900;
 }
 
@@ -8432,16 +8360,15 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: 'Font Awesome 6 Brands';
+  font-family: "Font Awesome 6 Brands";
   font-style: normal;
   font-weight: 400;
   font-display: block;
   src: url("./fontawesome-free-6.1.1-web/webfonts/fa-brands-400.woff2") format("woff2"), url("./fontawesome-free-6.1.1-web/webfonts/fa-brands-400.ttf") format("truetype");
 }
-
 .fab,
 .fa-brands {
-  font-family: 'Font Awesome 6 Brands';
+  font-family: "Font Awesome 6 Brands";
   font-weight: 400;
 }
 
@@ -10333,14 +10260,12 @@ readers do not read off random characters that represent icons */
 /* Reset box-model */
 /* ============================================ */
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ::before,
 ::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .mainslide.slick-initialized.slick-slider.slick-dotted {
@@ -10433,8 +10358,7 @@ dd {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -10580,13 +10504,13 @@ textarea {
 /**
  * Reset radio and checkbox appearance to preserve their look in iOS.
  */
-[type="checkbox"] {
+[type=checkbox] {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
        appearance: checkbox;
 }
 
-[type="radio"] {
+[type=radio] {
   -webkit-appearance: radio;
   -moz-appearance: radio;
        appearance: radio;
@@ -10616,9 +10540,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -10626,9 +10550,9 @@ button,
 }
 
 button[disabled],
-[type="button"][disabled],
-[type="reset"][disabled],
-[type="submit"][disabled] {
+[type=button][disabled],
+[type=reset][disabled],
+[type=submit][disabled] {
   cursor: default;
 }
 
@@ -10636,9 +10560,9 @@ button[disabled],
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -10647,9 +10571,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -10713,15 +10637,15 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
  * 1. Correct the outline style in Safari.
  */
-[type="search"] {
+[type=search] {
   outline-offset: -2px;
   /* 1 */
 }
@@ -10729,7 +10653,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -10820,7 +10744,7 @@ template {
   font-family: "Roboto", sans-serif;
 }
 
-.raleway, h1, ul.works li.work .content h2 {
+.raleway, ul.works li.work .content h2, h1.second, h1 {
   font-family: "Raleway", sans-serif;
 }
 
@@ -10831,7 +10755,6 @@ template {
 html {
   font-size: 10px !important;
 }
-
 @media screen and (max-width: 375px) {
   html {
     font-size: 9px !important;
@@ -10857,85 +10780,71 @@ h1 {
   text-align: center;
   font-size: 4rem;
 }
-
 h1 a {
   display: inline-block;
   padding-top: 3rem;
   padding-bottom: 6rem;
 }
 
-ul.works {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 6rem 3rem;
+h1.second {
+  display: block;
+  text-align: center;
+  font-size: 3.4rem;
+}
+h1.second span {
+  display: inline-block;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
-ul.works li.work {
-  display: -webkit-box;
-  display: -ms-flexbox;
+ul.works {
   display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 30%;
-          flex: 0 0 30%;
+  flex-wrap: wrap;
+  gap: 6rem 3rem;
+}
+ul.works li.work {
+  display: flex;
+  flex: 0 0 30%;
   border-bottom: solid 1px rgba(22, 36, 71, 0.1);
   padding-right: 2.5rem;
   padding-bottom: 4rem;
 }
-
 @media screen and (max-width: 1024px) {
   ul.works li.work {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 46%;
-            flex: 0 0 46%;
+    flex: 0 0 46%;
   }
 }
-
 @media screen and (max-width: 768px) {
   ul.works li.work {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
+    flex: 0 0 100%;
   }
 }
-
 ul.works li.work .icon {
   padding-right: 3.5rem;
 }
-
 ul.works li.work .icon i {
   font-size: 5rem;
   color: #162447;
 }
-
 ul.works li.work .content h2 {
   font-size: 2.4rem;
   margin-bottom: 1em;
 }
-
 ul.works li.work .content p {
   font-size: 1.4rem;
   opacity: 0.7;
   line-height: 1.5em;
 }
-
 ul.works li.work ul.links {
   margin: 1em 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
-
 ul.works li.work ul.links a {
   font-size: 2rem;
   opacity: 0.7;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-
 ul.works li.work ul.links a:hover {
   opacity: 1;
 }
@@ -10946,30 +10855,20 @@ footer {
   color: #ffffff;
   margin-top: 6rem;
 }
-
 footer .inner {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-
 footer .inner p {
   margin-bottom: 1em;
   font-size: 1.4rem;
 }
-
 footer .inner p.links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1.5rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
-
 footer .inner p.links a {
   font-size: 2rem;
 }

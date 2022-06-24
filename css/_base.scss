@@ -32,6 +32,18 @@ h1 {
     }
 }
 
+h1.second {
+    display: block;
+    text-align: center;
+    font-size: 3.4rem;
+    @extend .raleway;
+    span {
+        display: inline-block;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
 ul.works {
     display: flex;
     flex-wrap: wrap;
