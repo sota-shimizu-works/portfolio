@@ -1,0 +1,16 @@
+@use '../variables';
+@use '../mixins';
+
+.section {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        @extend .bely;
+        font-weight: 600;
+        font-size: 5.4rem;
+        letter-spacing: 0.29em;
+    }
+}

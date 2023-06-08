@@ -1,0 +1,51 @@
+@use '../variables' as var;
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 180px;
+
+    .icon {
+        font-size: 4.8rem;
+    }
+
+    .lists {
+        .list {
+            margin-bottom: 30px;
+
+            h3 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+            }
+
+            p {
+                a {
+                    color: var.$color1;
+                }
+            }
+        }
+    }
+
+    .nameWrap {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .name {
+            span {
+                display: block;
+
+                &:first-of-type {
+                    font-size: 1.4rem;
+                    margin-bottom: 4px;
+                    color: var.$color2;
+                }
+
+                &:last-of-type {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}

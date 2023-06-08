@@ -1,0 +1,12 @@
+.section {
+    .skills {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .skill {
+            width: 25%;
+            padding: 30px;
+        }
+    }
+}

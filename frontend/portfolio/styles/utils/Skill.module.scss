@@ -1,0 +1,78 @@
+@use '../variables' as var;
+
+.wrap {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+        font-size: 8rem;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        mix-blend-mode: multiply;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var.$color5;
+        border: 1px solid var.$color1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 110px;
+            height: 0px;
+            bottom: 0;
+            left: 0;
+            transform: skew(10deg, -10deg);
+            background-color: var.$color3;
+            mix-blend-mode: hard-light;
+        }
+
+        @for $i from 1 through 100 {
+            &[data-understanding="#{$i}"] {
+                &::before {
+                    height: 1px * $i;
+                    animation-name: animation-#{$i};
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease;
+                }
+            }
+        }
+
+        svg {
+            color: var.$color5;
+            mix-blend-mode: difference;
+        }
+
+    }
+}
+
+
+@for $i from 1 through 100 {
+    $random : random(5);
+
+    @keyframes animation-#{$i} {
+        0% {
+            /*アニメーションを開始するときのCSSを記述*/
+            height: 1px * $i;
+        }
+
+        22% {
+            height: 1px * $i + $random;
+        }
+
+        77% {
+            height: 1px * $i - $random;
+        }
+
+        100% {
+            /*アニメーションを終了するときのCSSを記述*/
+            height: 1px * $i;
+        }
+    }
+}

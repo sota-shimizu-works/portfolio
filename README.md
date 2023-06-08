@@ -1,4 +1,18 @@
-# My Portfolio
-
-https://sota-shimizu-works.github.io/portfolio/
-
+# My skills
+ - Backend
+    - PHP
+    - Ruby on Rails
+    - SQL / MySQL
+    - Docker
+    - Linux / CentOS
+ - Frontend
+    - HTML / CSS / SASS
+    - JavaScript / TypeScript
+    - React
+    - Next.Js
+    - Vue.Js
+ - Other
+    - XD / Photoshop / Illstrator
+    - AWS
+    - Pipeline
+    - Vercel
