@@ -5,9 +5,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 
     .icon {
-        font-size: 8rem;
+        font-size: 6rem;
         border-radius: 50%;
         width: 100px;
         height: 100px;
@@ -37,7 +38,7 @@
                 &::before {
                     height: 1px * $i;
                     animation-name: animation-#{$i};
-                    animation-duration: 2s;
+                    animation-duration: random(3) + s;
                     animation-iteration-count: infinite;
                     animation-timing-function: ease;
                 }
@@ -49,6 +50,12 @@
             mix-blend-mode: difference;
         }
 
+    }
+
+    p {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
     }
 }
 

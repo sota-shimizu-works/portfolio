@@ -1,10 +1,18 @@
 @use '../variables' as var;
+@use '../mixins';
 
 .section {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 180px;
+    @extend .section-settings;
+
+    @include mixins.media('phone') {
+        flex-wrap: wrap;
+        gap: 100px;
+        text-align: center;
+    }
 
     .icon {
         font-size: 4.8rem;
@@ -31,6 +39,10 @@
         display: flex;
         align-items: center;
         gap: 16px;
+
+        @include mixins.media('phone') {
+            justify-content: center;
+        }
 
         .name {
             span {

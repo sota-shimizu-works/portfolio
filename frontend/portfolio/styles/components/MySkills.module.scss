@@ -1,12 +1,22 @@
+@use '../variables' as var;
+@use '../mixins';
+
 .section {
+    @extend .section-settings;
+
     .skills {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
 
         .skill {
-            width: 25%;
+            width: calc(33.33% - 60px);
             padding: 30px;
+
+            @include mixins.media('phone') {
+                width: 100%;
+                padding: 20px;
+            }
         }
     }
 }

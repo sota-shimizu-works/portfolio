@@ -1,0 +1,33 @@
+@use '../variables' as var;
+
+.section {
+    @extend .section-settings;
+    max-width: 890px;
+}
+
+.description {
+    margin-bottom: 90px;
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    p {
+        line-height: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        li {
+            margin-bottom: 10px;
+        }
+    }
+}
